@@ -14,5 +14,8 @@ chromadb
 python-decouple
 tiktoken
 lark
-streamlit
-
+streamlit>=1.30.0
+langchain_community
+langchain-huggingface
+langchain-openai
+pysqlite3-binary
