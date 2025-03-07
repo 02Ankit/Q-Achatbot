@@ -11,11 +11,11 @@ langchain
 openai   
 pypdf
 chromadb
-streamlit
 python-decouple
 tiktoken
 lark
+streamlit
 langchain_community
 langchain-huggingface
 langchain-openai
-
+pysqlite3-binary
