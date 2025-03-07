@@ -4,9 +4,9 @@
 # this is repeated for all the othr documents till a correct answer is obtained.
 # Number of calls to the LLM is proportionate to the number of documents
 
-import langchain
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_openai.embeddings import OpenAIEmbeddings
+# import langchain
+# from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores.chroma import Chroma
 # from langchain.chat_models import ChatOpenAI
 from langchain_community.chat_models import ChatOpenAI
