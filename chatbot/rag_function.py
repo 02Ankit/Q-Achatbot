@@ -15,6 +15,7 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from decouple import config
 import os
+import streamlit as st
 # from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 
@@ -58,7 +59,7 @@ embedding = embedding_function
 
 
 
-llm = ChatOpenAI(openai_api_key=config("OPENAI_API_KEY"), temperature = 0.6)
+llm = ChatOpenAI(openai_api_key=st.secrets("OPENAI_API_KEY"), temperature = 0.6)
 
 memory = ConversationBufferMemory(
     return_messages = True, 
