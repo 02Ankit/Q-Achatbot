@@ -59,7 +59,7 @@ embedding = embedding_function
 
 
 
-llm = ChatOpenAI(openai_api_key=st.secrets("OPENAI_API_KEY"), temperature = 0.6)
+llm = ChatOpenAI(openai_api_key=config("OPENAI_API_KEY"), temperature = 0.6)
 
 memory = ConversationBufferMemory(
     return_messages = True, 
