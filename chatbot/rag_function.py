@@ -78,15 +78,32 @@ qa_chain = ConversationalRetrievalChain.from_llm(
 )
 
 def rag_func(question: str) -> str:
+
+    context = ""
+
+    QA_prompt = PromptTemplate(
+        template = """You are an HR assistant chatbot designed to answer employees' HR-related queries in a clear, polite, and professional manner.
+        Please answer concisely and accurately You are an HR assistant named "Eva", working at a corporate company. 
+        Your job is to assist employees with queries about company policies, payroll, leave, benefits, and onboarding. 
+        Always respond politely, concisely, and professionally.
+        
+        Questions: {question}
+        Answer:""",
+        input_variables = ["question"]
+    )
+
     """
     This function takes in user question or prompt and return as response.
     :param: question: String value of the question or the prompt from the user. 
     :returns: String value of the answer to the user question.
     
     """
-    response = qa_chain.invoke({"question": question})
+    formatted_prompt = QA_prompt.format(question=question)
+    response = qa_chain.invoke({"question": formatted_prompt})
 
-    return response.get("answer")
+    # response = qa_chain.invoke({"question": formatted_prompt})
+
+    return response.get("answer", "sorry i couldn't find an answer to that.")
 
     # resp = rag_func()
     # print(resp)
