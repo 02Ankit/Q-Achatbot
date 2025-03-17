@@ -28,8 +28,7 @@ TEXT = [ "leave": "Employees are eligible for 10 days of sick leave, 15 days of 
         "resignation": "Employees must serve a notice period of 30 days. All company assets must be returned before the last working day. Full and final settlement is processed within 45 days of exit.",
         "appraisal": "Performance appraisals are conducted annually in March. Managers and employees jointly review performance and set goals for the next year. Promotions and raises depend on performance ratings.",
         "training": "The company offers online and offline training programs. Employees can register via the HR portal. Trainings aim at skill development and career growth.",
-        "conduct": "All employees are expected to adhere to the company’s Code of Conduct. Policies on harassment, discrimination, and workplace behavior are strictly enforced. Violations may lead to disciplinary action."
-    ]
+        "conduct": "All employees are expected to adhere to the company’s Code of Conduct. Policies on harassment, discrimination, and workplace behavior are strictly enforced. Violations may lead to disciplinary action."]
 
 meta_data = [{"source": "document 1", "page": 1},
              {"source": "document 2", "page": 2},
