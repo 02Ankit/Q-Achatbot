@@ -19,11 +19,17 @@ import os
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 
 
-TEXT = ["Python is a versatile and widely used programming language known for its clean and readable syntax, which relies on indentation for code structure",
-        "It is a general-purpose language suitable for web development, data analysis, AI, machine learning, and automation. Python offers an extensive standard library with modules covering a broad range of tasks, making it efficient for developers.",
-        "It is cross-platform, running on Windows, macOS, Linux, and more, allowing for broad application compatibility."
-        "Python has a large and active community that develops libraries, provides documentation, and offers support to newcomers.",
-        "It has particularly gained popularity in data science and machine learning due to its ease of use and the availability of powerful libraries and frameworks."]
+TEXT = [ "leave": "Employees are eligible for 10 days of sick leave, 15 days of paid leave, and 10 public holidays per year. Leaves must be applied for in advance via the HR portal, except in emergencies.",
+        "salary": "Employees are paid on the last working day of each month. Payslips are available for download from the HR portal. For discrepancies, contact payroll@company.com.",
+        "probation": "New employees undergo a probation period of 6 months. Performance is reviewed before confirmation. Employees are notified of their confirmation status via email.",
+        "wfh": "Employees can apply for WFH up to 5 days per month. Approval depends on the manager and HR. Emergency WFH can be requested directly via email.",
+        "insurance": "The company provides medical insurance coverage for employees and their dependents. Coverage includes hospitalization and maternity. Insurance cards are issued within 30 days of joining.",
+        "grievance": "Employees can report grievances confidentially to hr.support@company.com or use the HR portal. All grievances are addressed within 7 working days.",
+        "resignation": "Employees must serve a notice period of 30 days. All company assets must be returned before the last working day. Full and final settlement is processed within 45 days of exit.",
+        "appraisal": "Performance appraisals are conducted annually in March. Managers and employees jointly review performance and set goals for the next year. Promotions and raises depend on performance ratings.",
+        "training": "The company offers online and offline training programs. Employees can register via the HR portal. Trainings aim at skill development and career growth.",
+        "conduct": "All employees are expected to adhere to the company’s Code of Conduct. Policies on harassment, discrimination, and workplace behavior are strictly enforced. Violations may lead to disciplinary action."
+    ]
 
 meta_data = [{"source": "document 1", "page": 1},
              {"source": "document 2", "page": 2},
