@@ -77,28 +77,48 @@ qa_chain = ConversationalRetrievalChain.from_llm(
     
 )
 
+
+def get_context(user_question):
+    mapping = {
+        "leave": "Employees are eligible for 10 days of sick leave, 15 days of paid leave, and 10 public holidays per year. Leaves must be applied for in advance via the HR portal, except in emergencies.",
+        "salary": "Employees are paid on the last working day of each month. Payslips are available for download from the HR portal. For discrepancies, contact payroll@company.com.",
+        "probation": "New employees undergo a probation period of 6 months. Performance is reviewed before confirmation. Employees are notified of their confirmation status via email.",
+        "wfh": "Employees can apply for WFH up to 5 days per month. Approval depends on the manager and HR. Emergency WFH can be requested directly via email.",
+        "insurance": "The company provides medical insurance coverage for employees and their dependents. Coverage includes hospitalization and maternity. Insurance cards are issued within 30 days of joining.",
+        "grievance": "Employees can report grievances confidentially to hr.support@company.com or use the HR portal. All grievances are addressed within 7 working days.",
+        "resignation": "Employees must serve a notice period of 30 days. All company assets must be returned before the last working day. Full and final settlement is processed within 45 days of exit.",
+        "appraisal": "Performance appraisals are conducted annually in March. Managers and employees jointly review performance and set goals for the next year. Promotions and raises depend on performance ratings.",
+        "training": "The company offers online and offline training programs. Employees can register via the HR portal. Trainings aim at skill development and career growth.",
+        "conduct": "All employees are expected to adhere to the company’s Code of Conduct. Policies on harassment, discrimination, and workplace behavior are strictly enforced. Violations may lead to disciplinary action."
+    }
+
+    for keyword in mapping:
+        if keyword in user_question.lower():
+            return mapping[keyword]
+    return "I'm sorry, I couldn't find an appropriate policy for your question. Please contact HR for more information."
+
+
 def rag_func(question: str) -> str:
 
-    context = ""
+    context = get_context(question)
 
     QA_prompt = PromptTemplate(
-        template = """You are an HR assistant chatbot designed to answer employees' HR-related queries in a clear, polite, and professional manner.
-        Please answer concisely and accurately You are an HR assistant named "Eva", working at a corporate company. 
-        Your job is to assist employees with queries about company policies, payroll, leave, benefits, and onboarding. 
-        Always respond politely, concisely, and professionally.
-        
+        template = """You are an HR assistant chatbot designed to answer employees' 
+        HR-related queries in a clear, polite, and professional manner. 
+        Please answer concisely and accurately.
+        Context: {context}
         Questions: {question}
         Answer:""",
-        input_variables = ["question"]
+        input_variables = ["context", "question"]
     )
 
-    """
-    This function takes in user question or prompt and return as response.
-    :param: question: String value of the question or the prompt from the user. 
-    :returns: String value of the answer to the user question.
+    # """
+    # This function takes in user question or prompt and return as response.
+    # :param: question: String value of the question or the prompt from the user. 
+    # :returns: String value of the answer to the user question.
     
-    """
-    formatted_prompt = QA_prompt.format(question=question)
+    # """
+    formatted_prompt = QA_prompt.format(context = context, question=question)
     response = qa_chain.invoke({"question": formatted_prompt})
 
     # response = qa_chain.invoke({"question": formatted_prompt})
