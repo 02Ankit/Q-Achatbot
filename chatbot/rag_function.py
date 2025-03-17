@@ -26,9 +26,9 @@ TEXT = ["Employees are eligible for 10 days of sick leave, 15 days of paid leave
         "The company provides medical insurance coverage for employees and their dependents. Coverage includes hospitalization and maternity. Insurance cards are issued within 30 days of joining.",
         "Employees can report grievances confidentially to hr.support@company.com or use the HR portal. All grievances are addressed within 7 working days.",
         "Employees must serve a notice period of 30 days. All company assets must be returned before the last working day. Full and final settlement is processed within 45 days of exit.",
-        "appraisal": "Performance appraisals are conducted annually in March. Managers and employees jointly review performance and set goals for the next year. Promotions and raises depend on performance ratings.",
-        "training": "The company offers online and offline training programs. Employees can register via the HR portal. Trainings aim at skill development and career growth.",
-        "conduct": "All employees are expected to adhere to the company’s Code of Conduct. Policies on harassment, discrimination, and workplace behavior are strictly enforced. Violations may lead to disciplinary action."]
+        "Performance appraisals are conducted annually in March. Managers and employees jointly review performance and set goals for the next year. Promotions and raises depend on performance ratings.",
+        "The company offers online and offline training programs. Employees can register via the HR portal. Trainings aim at skill development and career growth.",
+        "All employees are expected to adhere to the company’s Code of Conduct. Policies on harassment, discrimination, and workplace behavior are strictly enforced. Violations may lead to disciplinary action."]
 
 meta_data = [{"source": "document 1", "page": 1},
              {"source": "document 2", "page": 2},
